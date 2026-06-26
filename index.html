@@ -1,286 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SYR I VIBE | حول الموقع</title>
+  <title>SYR I VIBE Support</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #00ff33; /* تغيير اللون الأساسي إلى أخضر */
-      --secondary: #197d2d; /* أخضر داكن */
-      --dark: #1a1a2e;
-      --darker: #16213e;
-      --light: #f8f9fa;
-      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-      --warning: #ff0000; /* لون للتحذيرات المهمة */
-      --orange: #ff9500; /* اللون البرتقالي المطلوب */
+      --primary-color: #00c6ff;
+      --secondary-color: #0072ff;
+      --dark-bg: #1a1a2e;
+      --darker-bg: #16213e;
+      --neon-glow: 0 0 10px rgba(0, 198, 255, 0.7);
+      --danger-color: #ff3860;
+      --warning-color: #ffcc00;
+      --success-color: #00fff7;
+      --yellow-particle: #ffeb3b;
+      --green-particle: #4caf50;
     }
     
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Cairo', sans-serif;
     }
     
     body {
-      background: var(--darker);
-      color: var(--light);
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+      color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
+      padding: 20px;
     }
-    
-    /* التصميم الفاخر للصفحة */
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      position: relative;
-    }
-    
-    .about-header {
-      text-align: center;
-      margin-bottom: 50px;
-      position: relative;
-    }
-    
-    .about-header h1 {
-      font-size: 3.5rem;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 20px;
-      text-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
-    }
-    
-    .about-header p {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    
-    /* قسم محتوى الموقع */
-    .about-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-    
-    .about-card {
-      flex: 1;
-      min-width: 300px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .about-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(76, 175, 80, 0.2);
-    }
-    
-    .about-card h2 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-shadow: 0 0 10px rgba(0, 255, 51, 0.5);
-    }
-    
-    .about-card p {
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    
-    .feature-list {
-      list-style-type: none;
-    }
-    
-    .feature-list li {
-      margin-bottom: 10px;
-      position: relative;
-      padding-right: 25px;
-      color: rgba(255, 255, 255, 0.7);
-    }
-    
-    .feature-list li::before {
-      content: '✓';
-      color: var(--primary);
-      position: absolute;
-      right: 0;
-      text-shadow: 0 0 5px rgba(0, 255, 51, 0.5);
-    }
-    
-    /* قسم وسائل التواصل */
-    .social-section {
-      text-align: center;
-      margin-top: 60px;
-    }
-    
-    .social-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      color: var(--light);
-      position: relative;
-      display: inline-block;
-      text-shadow: 0 0 10px rgba(248, 249, 250, 0.3);
-    }
-    
-    .social-section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: var(--gradient);
-      border-radius: 3px;
-      box-shadow: 0 0 10px rgba(0, 255, 51, 0.5);
-    }
-    
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 40px;
-    }
-    
-    .social-icon {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .social-icon img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-    }
-    
-    .social-icon:hover {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
-      background: rgba(76, 175, 80, 0.2);
-    }
-    
-    /* قسم الشروط والأحكام */
-    .terms-section {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 40px;
-      margin: 60px auto 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      max-width: 900px;
-      text-align: center;
-      position: relative;
-    }
-    
-    .terms-section h2 {
-      color: var(--primary);
-      margin-bottom: 30px;
-      font-size: 2rem;
-      text-shadow: 0 0 10px rgba(0, 255, 51, 0.5);
-    }
-    
-    .terms-section ol {
-      padding-right: 0;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 2;
-      font-size: 1.1rem;
-      display: inline-block;
-      text-align: right;
-    }
-    
-    .terms-section li {
-      margin-bottom: 20px;
-      position: relative;
-      padding-right: 30px;
-    }
-    
-    .terms-section li.important {
-      color: var(--warning);
-      font-weight: bold;
-      text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
-    }
-    
-    .terms-section li.orange {
-      color: var(--orange);
-      text-shadow: 0 0 8px rgba(255, 149, 0, 0.5);
-    }
-    
-    .terms-section li::before {
-      content: '•';
-      color: var(--primary);
-      position: absolute;
-      right: 10px;
-      font-size: 1.5rem;
-      text-shadow: 0 0 5px rgba(0, 255, 51, 0.5);
-    }
-    
-    /* تأثيرات الجسيمات الخلفية */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-    
-    .particle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: float 15s infinite linear;
-    }
-    
-    .contact-container {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    .contact-link {
-      display: inline-flex;
-      align-items: center;
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.3s;
-      direction: ltr;
-      float: left;
-      margin-left: 20px;
-    }
-    
-    .contact-link:hover {
-      color: var(--primary);
-    }
-    
-    .contact-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
-    }
-    
+
     .back-btn {
       position: absolute;
       top: 1rem;
@@ -295,185 +48,684 @@
       align-items: center;
       gap: 0.5rem;
       transition: all 0.3s;
-      z-index: 2;
+      z-index: 10;
+      text-decoration: none;
     }
     
     .back-btn:hover {
       background: rgba(255,255,255,0.2);
       transform: translateX(-5px);
     }
+
+    .contact-header {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
     
+    .contact-header::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: pulse 15s infinite linear;
+      z-index: 0;
+    }
+    
+    @keyframes pulse {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .contact-header h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: var(--neon-glow);
+      color: var(--primary-color);
+    }
+    
+    .contact-header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      line-height: 1.6;
+    }
+
+    .header-image {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 5px rgba(0, 198, 255, 0.5));
+      animation: float 3s ease-in-out infinite;
+    }
+
     @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .input-group {
+      position: relative;
+      margin-top: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-family: 'Cairo', sans-serif;
+      box-sizing: border-box;
+      background: rgba(0, 0, 0, 0.3);
+      color: #fff;
+      transition: all 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.3);
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    input {
+      padding-left: 40px;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .error-message {
+      color: var(--danger-color);
+      font-size: 0.8rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    .char-counter {
+      text-align: left;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 5px;
+    }
+
+    .char-counter.warning {
+      color: var(--warning-color);
+    }
+
+    .char-counter.error {
+      color: var(--danger-color);
+    }
+
+    .cooldown-message {
+      color: var(--warning-color);
+      font-size: 0.9rem;
+      margin-top: 15px;
+      text-align: center;
+      display: none;
+      background: rgba(255, 204, 0, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--warning-color);
+    }
+
+    .submit-btn {
+      background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin-top: 25px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 100%;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 198, 255, 0.4);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 198, 255, 0.6);
+      animation: neon-pulse 1.5s infinite alternate;
+    }
+
+    .submit-btn:disabled {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: not-allowed;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 50%, 
+        transparent 100%);
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+      z-index: -1;
+    }
+
+    .submit-btn:hover::before:not(:disabled) {
+      transform: translateX(100%);
+    }
+
+    @keyframes neon-pulse {
+      0% {
+        box-shadow: 0 0 5px rgba(0, 198, 255, 0.4),
+                    0 0 10px rgba(0, 198, 255, 0.3),
+                    0 0 15px rgba(0, 198, 255, 0.2);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(0, 198, 255, 0.6),
+                    0 0 20px rgba(0, 198, 255, 0.4),
+                    0 0 30px rgba(0, 198, 255, 0.2);
+      }
+    }
+
+    .floating-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float-particle 15s infinite linear;
+    }
+
+    .particle.type1 {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .particle.type2 {
+      background: var(--yellow-particle);
+      opacity: 0.6;
+    }
+
+    .particle.type3 {
+      background: var(--green-particle);
+      opacity: 0.6;
+    }
+
+    @keyframes float-particle {
       0% {
         transform: translateY(0) translateX(0);
         opacity: 0;
       }
       10% {
-        opacity: 0.5;
+        opacity: 0.6;
       }
       90% {
-        opacity: 0.5;
+        opacity: 0.6;
       }
       100% {
         transform: translateY(-100vh) translateX(100px);
         opacity: 0;
       }
     }
-    
-    /* التكيف مع الشاشات الصغيرة */
+
+    /* رسالة النجاح */
+    .success-message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .success-message.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .success-icon {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+      animation: bounceIn 0.8s ease forwards;
+    }
+
+    .success-text {
+      color: white;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 768px) {
-      .about-header h1 {
-        font-size: 2.5rem;
+      .contact-header {
+        padding: 1.5rem;
+        flex-direction: column;
       }
       
-      .about-card {
-        min-width: 100%;
+      .contact-header h2 {
+        font-size: 1.8rem;
       }
       
-      .social-icon {
+      .header-image {
         width: 60px;
         height: 60px;
       }
       
-      .social-icon img {
-        width: 30px;
-        height: 30px;
-      }
-      
-      .terms-section {
+      .container {
         padding: 20px;
       }
-      
-      .terms-section ol {
-        font-size: 1rem;
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
       }
-      
-      .back-btn {
-        top: 0.5rem;
-        right: 0.5rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+
+      .success-text {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- جسيمات خلفية متحركة -->
-  <div class="particles" id="particles"></div>
+  <a href="#" class="back-btn" onclick="window.history.back(); return false;">
+    <i class="fas fa-arrow-right"></i> العودة
+  </a>
   
-  <div class="about-container">
-    <button class="back-btn" onclick="window.history.back()">
-      <i class="fas fa-arrow-right"></i> العودة
-    </button>
-    
-    <header class="about-header">
-      <h1><i class="fas fa-info-circle"></i> حول Syr i Vibe</h1>
-      <p>منصتكم الآمنة لتحميل التطبيقات والألعاب المجانية للكمبيوتر والجوال</p>
-    </header>
-    
-    <div class="about-content">
-      <div class="about-card">
-        <h2><i class="fas fa-shield-alt"></i> لماذا نختلف؟</h2>
-        <ul class="feature-list">
-          <li>جميع التطبيقات والألعاب خالية من الفيروسات</li>
-          <li>فحص دقيق لكل ملف قبل رفعه</li>
-          <li>سرعة تحميل عالية بدون انتظار</li>
-          <li>واجهة سهلة الاستخدام</li>
-          <li>دعم متعدد الأجهزة (كمبيوتر وجوال)</li>
-        </ul>
-      </div>
-      
-      <div class="about-card">
-        <h2><i class="fas fa-download"></i> كيف يعمل الموقع؟</h2>
-        <ol class="feature-list">
-          <li>تصفح التطبيقات أو الألعاب المفضلة لديك</li>
-          <li>تحقق من متطلبات النظام</li>
-          <li>اختيار ما يناسب احتجياتك!</li>
-          <li>استمتع بالتطبيقات و الالعاب الآمنة على جهازك</li>
-          <li>خدمة عملاء في خدمتكم 24/7</li>
-        </ol>
-      </div>
-      
-      <div class="about-card">
-        <h2><i class="fas fa-gamepad"></i> محتوانا</h2>
-        <ul class="feature-list">
-          <li>أحدث الألعاب المجانية</li>
-          <li>تطبيقات ضرورية لكل مستخدم</li>
-          <li>برامج تحسين الجهاز</li>
-          <li>بثوث مباشرة للألعاب</li>
-          <li>شروحات وتوجيهات تقنية</li>
-        </ul>
-      </div>
+  <!-- رسالة النجاح -->
+  <div class="success-message" id="successMessage">
+    <img src="https://c.top4top.io/p_3451skiyr1.png" alt="Success" class="success-icon">
+    <div class="success-text">تم الإرسال بنجاح<br>سنرد عليك في أقرب وقت ممكن</div>
+  </div>
+  
+  <div class="floating-particles" id="particles"></div>
+  
+  <header class="contact-header">
+    <img src="https://e.top4top.io/p_3450md70z1.png" alt="Contact Icon" class="header-image">
+    <div class="header-content">
+      <h2>تواصل معنا</h2>
+      <p>نحن هنا لمساعدتك! يرجى تعبئة النموذج أدناه وسنقوم بالرد عليك في أقرب وقت ممكن</p>
     </div>
-    
-    <div class="social-section">
-      <h2>تابعنا على وسائل التواصل</h2>
-      <p>كن أول من يعرف عن أحدث التطبيقات والألعاب التي نضيفها</p>
-      
-      <div class="social-icons">
-        <a href="https://www.facebook.com/yourpage" oneclick="_blank" class="social-icon" title="فيسبوك">
-          <img src="https://k.top4top.io/p_345179vz11.png" alt="Facebook">
-        </a>
-        <a href="https://www.youtube.com/@syrvibe" oneclick="_blank" class="social-icon" title="يوتيوب">
-          <img src="https://a.top4top.io/p_3451uunop1.png" alt="YouTube">
-        </a>
-        <a href="https://www.tiktok.com/@yourusername" oneclick="_blank" class="social-icon" title="تيك توك">
-          <img src="https://c.top4top.io/p_34519lyiv1.png" alt="TikTok">
-        </a>
-        <a href="https://kick.com/yourusername" oneclick="_blank" class="social-icon" title="كيك">
-          <img src="https://d.top4top.io/p_3451vak8e1.png" alt="Kick">
-        </a>
-        <a href="https://www.instagram.com/yourusername" oneclick="_blank" class="social-icon" title="انستقرام">
-          <img src="https://h.top4top.io/p_34512dk861.png" alt="Instagram">
-        </a>
+  </header>
+  
+  <div class="container">
+    <form id="contactForm">
+      <label for="email">البريد الإلكتروني:</label>
+      <div class="input-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input type="email" id="email" required placeholder="email@domain.com">
       </div>
-    </div>
-    
-    <div class="terms-section">
-      <h2><i class="fas fa-file-contract"></i> الشروط والأحكام</h2>
-      <ol>
-        <li>الموقع يقدم التطبيقات والألعاب مجانا تماما و يتم فحصها قبل الرفع</li>
-        <li class="important">غير مسئولين عن اي ضرر قد تواجه اذا قمت تحميل من موقع اخر او مواقع المشابه</li>
-        <li class="important">نحن غير مسؤولين عن أي استخدام غير قانوني للمحتوى</li>
-        <li>التطبيقات مفحوصة ضد الفيروسات ولكن ننصح بفحصها على جهازك أيضًا</li>
-        <li class="important">حساباتنا التواصل فريدة و موجودة اعلاه غير مسئولين عن غيرها!</li>
-        <li class="orange">تحميلك لأي محتوى يعني موافقتك على هذه الشروط والأحكام</li>
-        <li>شكرًا لاستخدامك منصتنا ونتمنى لك تجربة ممتعة</li>
-      </ol>
+      <div class="error-message" id="email-error">الرجاء إدخال بريد إلكتروني صحيح</div>
       
-      <div class="contact-container">
-        <a href="https://thefoxyt15.github.io/syr-vibe-support/" class="contact-link" oneclick="_blank">
-          <img src="https://j.top4top.io/p_3452i2ew21.png" class="contact-icon" alt="Support">
-          للاستفسارات القانونية او عن مشكلة فلا تتردد في تواصل معنا من هنا
-        </a>
+      <label for="category">نوع الرسالة:</label>
+      <select id="category" required>
+        <option value="">-- اختر نوع الرسالة --</option>
+        <option value="Technical Issue">بلاغ مشكلة فنية</option>
+        <option value="General Inquiry">استفسار عام</option>
+        <option value="Suggestion">اقتراح</option>
+        <option value="Complaint">شكوى</option>
+      </select>
+
+      <label for="message">نص الرسالة:</label>
+      <textarea id="message" required placeholder="اكتب رسالتك هنا..." maxlength="2000"></textarea>
+      <div class="char-counter" id="charCounter">0/2000</div>
+
+      <div class="cooldown-message" id="cooldownMessage">
+        <i class="fas fa-clock"></i> عفواً، لقد أرسلت رسالة للدعم الفني مؤخراً.<br>
+        يمكنك الإرسال بعد: <span id="cooldownTimer">00:00:00</span>
       </div>
-    </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <i class="fas fa-paper-plane"></i> إرسال الرسالة
+      </button>
+    </form>
   </div>
 
   <script>
-    // إنشاء جسيمات متحركة في الخلفية
     document.addEventListener('DOMContentLoaded', function() {
+      // إنشاء جسيمات عائمة متعددة الألوان
       const particlesContainer = document.getElementById('particles');
-      const colors = ['#4CAF50', '#2E7D32', '#8BC34A', '#CDDC39', '#ffffff'];
-      
-      for (let i = 0; i < 50; i++) {
+      const particleTypes = ['type1', 'type2', 'type3'];
+      for (let i = 0; i < 40; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
         
-        // خصائص الجسيم
-        const size = Math.random() * 10 + 3;
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        // اختيار نوع عشوائي للجسيم
+        const typeIndex = Math.floor(Math.random() * particleTypes.length);
+        particle.classList.add(particleTypes[typeIndex]);
         
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
+        particle.style.width = `${Math.random() * 10 + 5}px`;
+        particle.style.height = particle.style.width;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100 + 100}%`;
-        particle.style.background = color;
-        particle.style.animationDuration = `${Math.random() * 15 + 10}s`;
+        particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
         particle.style.animationDelay = `${Math.random() * 5}s`;
-        
         particlesContainer.appendChild(particle);
       }
+
+      const form = document.getElementById('contactForm');
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      const category = document.getElementById('category');
+      const message = document.getElementById('message');
+      const charCounter = document.getElementById('charCounter');
+      const submitBtn = document.getElementById('submitBtn');
+      const cooldownMessage = document.getElementById('cooldownMessage');
+      const cooldownTimer = document.getElementById('cooldownTimer');
+      const successMessage = document.getElementById('successMessage');
+
+      const WEBHOOK_URL = 'https://discord.com/api/webhooks/1519279028786298980/otTwpofPQM510ukTAMTEgSPBCvDUitisx-5AktWddGsGfy5v33H9j-ty4Go7YKfG68ic';
+      
+      // تحديث عداد الأحرف
+      message.addEventListener('input', function() {
+        const currentLength = message.value.length;
+        charCounter.textContent = `${currentLength}/2000`;
+        
+        if (currentLength > 1000) {
+          charCounter.classList.add('warning');
+          charCounter.classList.remove('error');
+        } else if (currentLength > 2900) {
+          charCounter.classList.remove('warning');
+          charCounter.classList.add('error');
+        } else {
+          charCounter.classList.remove('warning', 'error');
+        }
+      });
+      
+      // دالة لفحص التبريد
+      function checkCooldown() {
+        const lastSent = localStorage.getItem('lastSentTime');
+        if (lastSent) {
+          const lastSentTime = new Date(lastSent).getTime();
+          const now = new Date().getTime();
+          const cooldownPeriod = 24 * 60 * 60 * 1000; // 24 ساعة بالميلي ثانية
+          const remainingTime = lastSentTime + cooldownPeriod - now;
+          
+          if (remainingTime > 0) {
+            // تفعيل وضع التبريد
+            enableCooldown(remainingTime);
+            return true;
+          } else {
+            // انتهت فترة التبريد
+            localStorage.removeItem('lastSentTime');
+            cooldownMessage.style.display = 'none';
+            submitBtn.disabled = false;
+          }
+        }
+        return false;
+      }
+      
+      // تفعيل وضع التبريد
+      function enableCooldown(remainingTime) {
+        submitBtn.disabled = true;
+        cooldownMessage.style.display = 'block';
+        
+        // تحديث العداد كل ثانية
+        const cooldownInterval = setInterval(() => {
+          remainingTime -= 1000;
+          
+          if (remainingTime <= 0) {
+            clearInterval(cooldownInterval);
+            cooldownMessage.style.display = 'none';
+            submitBtn.disabled = false;
+            localStorage.removeItem('lastSentTime');
+            return;
+          }
+          
+          // تحويل الميلي ثانية إلى ساعات:دقائق:ثواني
+          const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+          const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+          
+          cooldownTimer.textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+      }
+      
+      // التحقق من صحة البريد الإلكتروني
+      emailInput.addEventListener('input', function() {
+        if (emailInput.validity.valid) {
+          emailError.style.display = 'none';
+          emailInput.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+        } else {
+          emailError.style.display = 'block';
+          emailInput.style.borderColor = 'var(--danger-color)';
+        }
+      });
+      
+      // التحقق من التبريد عند تحميل الصفحة
+      checkCooldown();
+      
+      // دالة لإرسال الرسالة إلى Discord
+      async function sendToDiscord(messageData) {
+        const embed = {
+          title: "📩 رسالة جديدة من نموذج التواصل",
+          color: 0x00FFF7, // اللون الأزرق الفاتح (#00fff7)
+          fields: [
+            { name: "📧 البريد الإلكتروني", value: messageData.email || "غير معروف", inline: true },
+            { name: "📌 نوع الرسالة", value: getCategoryName(messageData.category), inline: true },
+            { name: "📝 نص الرسالة", value: messageData.text || "لا يوجد نص", inline: false },
+            { name: "⏱ التاريخ والوقت", value: new Date(messageData.timestamp).toLocaleString('en-US'), inline: false }
+          ],
+          timestamp: new Date().toISOString()
+        };
+        
+        try {
+          const response = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ embeds: [embed] })
+          });
+          
+          if (!response.ok) {
+            console.error('فشل الإرسال إلى Discord:', await response.text());
+            return false;
+          }
+          return true;
+        } catch (error) {
+          console.error('حدث خطأ في الإرسال:', error);
+          return false;
+        }
+      }
+      
+      // دالة لتحويل اسم الفئة إلى العربية
+      function getCategoryName(categoryValue) {
+        const categories = {
+          'Technical Issue': 'مشكلة فنية',
+          'General Inquiry': 'استفسار عام',
+          'Suggestion': 'اقتراح',
+          'Complaint': 'شكوى'
+        };
+        return categories[categoryValue] || categoryValue;
+      }
+      
+      // دالة لعرض رسالة النجاح
+      function showSuccessMessage() {
+        successMessage.classList.add('show');
+        
+        // إخفاء الرسالة بعد 3 ثواني
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 2000);
+      }
+      
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // التحقق من فترة التبريد
+        if (submitBtn.disabled) {
+          return;
+        }
+        
+        // التحقق من صحة البريد الإلكتروني
+        if (!emailInput.validity.valid) {
+          emailError.style.display = 'block';
+          emailInput.style.borderColor = 'var(--danger-color)';
+          emailInput.focus();
+          return;
+        } else {
+          emailError.style.display = 'none';
+        }
+        
+        // التحقق من طول النص
+        if (message.value.length > 2000) {
+          alert('الحد الأقصى لطول الرسالة هو 2000 حرف');
+          return;
+        }
+        
+        const msg = {
+          email: emailInput.value.trim(),
+          category: category.value,
+          text: message.value.trim(),
+          timestamp: new Date().getTime()
+        };
+        
+        // إرسال الرسالة إلى Discord
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
+        submitBtn.disabled = true;
+        
+        const success = await sendToDiscord(msg);
+        
+        if (success) {
+          // حفظ وقت آخر إرسال
+          localStorage.setItem('lastSentTime', new Date());
+          
+          // تفعيل فترة التبريد
+          checkCooldown();
+          
+          // عرض رسالة النجاح
+          showSuccessMessage();
+          
+          // إعادة تعيين النموذج
+          setTimeout(() => {
+            form.reset();
+            charCounter.textContent = '0/2000';
+            charCounter.classList.remove('warning', 'error');
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الرسالة';
+          checkCooldown();
+          }, 2000);
+        } else {
+          alert('حدث خطأ أثناء إرسال الرسالة، يرجى المحاولة مرة أخرى');
+          submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> إرسال الرسالة';
+          submitBtn.disabled = false;
+        }
+      });
     });
   </script>
 </body>
